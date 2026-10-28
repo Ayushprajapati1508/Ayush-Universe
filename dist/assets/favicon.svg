@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" role="img" aria-label="Ayush Prajapati AP">
+  <defs>
+    <linearGradient id="g" x1="16" y1="25" x2="84" y2="73" gradientUnits="userSpaceOnUse"><stop stop-color="#48E6FF"/><stop offset="1" stop-color="#A777FF"/></linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="25" fill="#080A0E"/>
+  <path fill="url(#g)" fill-rule="evenodd" d="M12 65 32 27h11l20 38H49l-4-8H30l-4 8H12Zm22-19h7l-3.5-8L34 46Z" clip-rule="evenodd"/>
+  <path fill="url(#g)" d="M46 27h22c13 0 21 6 21 17s-8 17-21 17h-6l-6-12h12c5 0 8-2 8-5s-3-5-8-5H52L46 27Z"/>
+  <path stroke="url(#g)" stroke-width="3" stroke-linecap="round" d="M21 68C8 72 15 79 34 78c16-.6 31-4 43-10"/>
+  <path fill="#FF917B" d="m83 66 2.5 6.5L92 75l-6.5 2.5L83 84l-2.5-6.5L74 75l6.5-2.5L83 66Z"/>
+</svg>

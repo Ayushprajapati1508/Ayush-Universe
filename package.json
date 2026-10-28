@@ -1,0 +1,16 @@
+{
+  "name": "ayush-universe",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Ayush Prajapati's interactive universe portfolio",
+  "scripts": {
+    "dev": "node serve.mjs",
+    "start": "node serve.mjs",
+    "check": "node --check dist/app.js && node --check dist/universe.js && node --check dist/universe-fallback.js && node --check dist/profile.js"
+  },
+  "dependencies": {
+    "three": "0.180.0",
+    "@fontsource-variable/space-grotesk": "5.3.0"
+  }
+}
