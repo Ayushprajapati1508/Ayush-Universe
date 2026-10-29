@@ -24,3 +24,9 @@ html { overflow-x:clip; }
 .hero { overflow:clip; }
 html.lock-scroll { overflow:hidden; }
 .universe-canvas { filter:brightness(1.18) saturate(1.1); }
+.email-card { margin-top: 24px; padding: 20px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(139, 165, 215, 0.25); border-radius: 14px; text-align: center; }
+.email-display { display: inline-block; font-family: inherit; font-size: 16px; font-weight: 600; color: #5ef2d5; margin-bottom: 18px; text-decoration: none; word-break: break-all; padding: 6px 14px; background: rgba(94, 242, 213, 0.08); border-radius: 8px; border: 1px solid rgba(94, 242, 213, 0.2); transition: all 0.2s ease; }
+.email-display:hover { background: rgba(94, 242, 213, 0.16); color: #fff; border-color: #5ef2d5; }
+.email-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 4px; }
+.email-buttons .button { margin-top: 0 !important; font-size: 13px; padding: 10px 18px; }
+#email-feedback { margin-top: 14px; font-size: 13px; color: #5ef2d5; min-height: 18px; }

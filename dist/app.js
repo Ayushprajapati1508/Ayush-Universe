@@ -178,24 +178,47 @@ if (profile.resumeURL) {
 }
 $('#contact-pending').hidden = links.children.length > 0;
 
-$('#copy-link').addEventListener('click', async () => {
-  const link = new URL(location.href); link.hash = '';
-  const message = $('#copy-feedback');
-  try {
-    if (navigator.clipboard?.writeText) await navigator.clipboard.writeText(link.href);
-    else {
-      const field = document.createElement('textarea'); field.value = link.href; field.style.position = 'fixed'; field.style.opacity = '0'; document.body.append(field); field.select();
-      const copied = document.execCommand('copy'); field.remove(); if (!copied) throw new Error('Clipboard unavailable');
+const emailDialog = $('#email-dialog');
+const emailDialogClose = $('#email-dialog-close');
+const connectButton = $('#connect-button');
+const copyEmailBtn = $('#copy-email-btn');
+const emailFeedback = $('#email-feedback');
+const emailAddress = profile.email || 'ayush8816pr@gmail.com';
+
+if (connectButton && emailDialog) {
+  connectButton.addEventListener('click', () => {
+    emailDialog.showModal();
+    if (emailFeedback) emailFeedback.textContent = '';
+  });
+  emailDialogClose?.addEventListener('click', () => {
+    emailDialog.close();
+  });
+  emailDialog.addEventListener('click', event => {
+    const r = emailDialog.getBoundingClientRect();
+    if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) {
+      emailDialog.close();
     }
-    message.textContent = 'Portfolio link copied.';
-  } catch {
-    message.replaceChildren();
-    const label = document.createElement('label'); label.textContent = 'Copy this address: ';
-    const field = document.createElement('input'); field.value = link.href; field.readOnly = true; field.setAttribute('aria-label','Portfolio URL');
-    Object.assign(field.style,{ color:'#b5eafa', background:'#111827', border:'1px solid #48e6ff44', padding:'5px', width:'min(290px,80%)', fontSize:'10px' });
-    label.append(field); message.append(label); field.focus(); field.select();
-  }
-});
+  });
+  copyEmailBtn?.addEventListener('click', async () => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(emailAddress);
+      } else {
+        const field = document.createElement('textarea');
+        field.value = emailAddress;
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        document.body.append(field);
+        field.select();
+        document.execCommand('copy');
+        field.remove();
+      }
+      if (emailFeedback) emailFeedback.textContent = 'Email copied to clipboard!';
+    } catch {
+      if (emailFeedback) emailFeedback.textContent = emailAddress;
+    }
+  });
+}
 
 try {
   const { createUniverse } = await import('./universe.js');

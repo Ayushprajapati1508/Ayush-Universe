@@ -5,7 +5,7 @@
  * For a CV, place the PDF in assets/ and set resumeURL to './assets/resume.pdf'.
  */
 export const profile = {
-  email: '',
+  email: 'ayush8816pr@gmail.com',
   linkedin: '',
   github: 'https://github.com/Ayushprajapati1508',
   resumeURL: '',
